@@ -56,7 +56,7 @@ ts_list = [(stream_name + '-' +str(i)+'.ts') for i in tslist_1]
 #编写新的m3u8文件
 s = int(querys['h'])
 e = int(querys['a'])
-new_m3u8 = stream_name + '.m3u8' + '/' + str(s) + ',' + str(e)
+new_m3u8 = stream_name  + '-' + str(s) + ',' + str(e) + '.m3u8'
 with  open(new_m3u8, 'a',encoding='utf-8')as m:
     #m3u8文件头
     th = ('#EXTM3U' +'\n' +'#EXT-X-VERSION:3' +'\n'+'#EXT-X-MEDIA-SEQUENCE:0'+'\n'+
@@ -75,4 +75,5 @@ with  open(new_m3u8, 'a',encoding='utf-8')as m:
         w = '#EXTINF:' + str(ts_duration) +', no desc'
         m.write(w + "\n")#写EXTINF 
         m.write(i + "\n")#写入ts文件名
+    m.write('#EXT-X-ENDLIST')#添加结尾
     m.close()
