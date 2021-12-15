@@ -8,7 +8,8 @@ from moviepy.editor import VideoFileClip
 #     if os.stat(dirpath).st_size > 0:
 #         files= file
 
-url = 'http://10.30.59.36:8080/livetest/lala.m3u8?h=1639473720&a=1639473960'
+#testurl
+url = 'http://0.0.0.0:8080/livetest/lala.m3u8?h=1639473720&a=1639473960'
 
 #从url中获取app、stream，拼接出切片所在路径
 pat_app = re.compile('8080/' + '(.*?)' + '/',re.S)#('.com/' + '(.*?)' + '/')
