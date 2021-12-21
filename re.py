@@ -61,7 +61,7 @@ def  hlsreplay():
             m.write(i + "\n")#写入ts文件名
         m.write('#EXT-X-ENDLIST')#添加结尾
         m.close()
-    red_url =  'http://10.30.59.36:8080' + '/' + app + '/' + new_m3u8
+    red_url =  host + '/' + app + '/' + new_m3u8
     return redirect(red_url,code=303)
     # return res_json
 def judge_time_file(path,file,update_time,time1,time2):
